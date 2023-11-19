@@ -1,0 +1,26 @@
+{
+    "name": "SteamCode Chrome Extension", 
+    "description": "Sample Chrome Extension", 
+    "version": "1.0",
+    "manifest_version": 3, 
+    "permissions": [ 
+        "clipboardWrite",
+        "clipboardRead", 
+        "storage", 
+        "activeTab", 
+        "contextMenus",
+        "offscreen"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["https://*/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
